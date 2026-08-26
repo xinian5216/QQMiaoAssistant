@@ -27,4 +27,4 @@
 
 # 正版
 支持一下正版谢谢喵
-[正版作品](https://share.weiyun.com/bsHZmcKm)
+[正版作品](https://mpimg.cn/down.php/10ca05b67fec26eb3026178f040bab69.apk)
