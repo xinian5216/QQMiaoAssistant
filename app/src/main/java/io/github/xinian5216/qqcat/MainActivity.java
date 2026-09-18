@@ -1,4 +1,4 @@
-package com.example.u7e5f3218e9;
+package io.github.xinian5216.qqcat;
 
 import android.accessibilityservice.AccessibilityServiceInfo;
 import android.app.Activity;
@@ -51,7 +51,7 @@ public class MainActivity extends Activity {
         root.setLayoutParams(new ViewGroup.LayoutParams(-1, -2));
 
         TextView title = new TextView(this);
-        title.setText("QQ文本改写助手");
+        title.setText("QQ喵喵助手");
         title.setTextSize(24.0f);
         title.setTextColor(Color.rgb(230, 81, 0));
         title.setTypeface(Typeface.DEFAULT_BOLD);
@@ -107,7 +107,7 @@ public class MainActivity extends Activity {
         this.rbPunctuation.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                MainActivity.this.m0lambda$onCreate$0$comexampleu7e5f3218e9MainActivity(buttonView, isChecked);
+                MainActivity.this.onPunctuationModeChecked(buttonView, isChecked);
             }
         });
         modeRow.addView(this.rbPunctuation);
@@ -119,7 +119,7 @@ public class MainActivity extends Activity {
         this.rbRealtime.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                MainActivity.this.m1lambda$onCreate$1$comexampleu7e5f3218e9MainActivity(buttonView, isChecked);
+                MainActivity.this.onRealtimeModeChecked(buttonView, isChecked);
             }
         });
         modeRow.addView(this.rbRealtime);
@@ -240,13 +240,13 @@ public class MainActivity extends Activity {
         setContentView(scrollView);
     }
 
-    void m0lambda$onCreate$0$comexampleu7e5f3218e9MainActivity(CompoundButton buttonView, boolean isChecked) {
+    void onPunctuationModeChecked(CompoundButton buttonView, boolean isChecked) {
         if (isChecked) {
             this.rbRealtime.setChecked(false);
         }
     }
 
-    void m1lambda$onCreate$1$comexampleu7e5f3218e9MainActivity(CompoundButton buttonView, boolean isChecked) {
+    void onRealtimeModeChecked(CompoundButton buttonView, boolean isChecked) {
         if (isChecked) {
             this.rbPunctuation.setChecked(false);
         }

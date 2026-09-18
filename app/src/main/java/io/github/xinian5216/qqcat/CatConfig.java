@@ -1,4 +1,4 @@
-package com.example.u7e5f3218e9;
+package io.github.xinian5216.qqcat;
 
 import android.content.Context;
 import android.content.SharedPreferences;

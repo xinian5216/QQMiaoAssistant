@@ -5,10 +5,8 @@
         android:minSdkVersion="23"
         android:targetSdkVersion="34" />
 
-    <!-- 无障碍服务权限（系统强制要求，由 BIND_ACCESSIBILITY_SERVICE 保护） -->
+    <!-- 无障碍服务：读取并改写 QQ 输入框文本所必需，系统会提示为高风险权限，属正常现象 -->
     <uses-permission android:name="android.permission.BIND_ACCESSIBILITY_SERVICE" />
-    <uses-permission android:name="moe.shizuku.manager.permission.API_V23" />
-    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
 
     <application
         android:allowBackup="true"

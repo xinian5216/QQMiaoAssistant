@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace 'com.example.u7e5f3218e9'
+    namespace 'io.github.xinian5216.qqcat'
     compileSdk 34
 
     defaultConfig {
-        applicationId "com.example.u7e5f3218e9"
+        applicationId "io.github.xinian5216.qqcat"
         minSdk 23
         targetSdk 34
         versionCode 1

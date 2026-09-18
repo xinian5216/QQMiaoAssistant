@@ -1,4 +1,4 @@
-package com.example.u7e5f3218e9;
+package io.github.xinian5216.qqcat;
 
 import android.accessibilityservice.AccessibilityService;
 import android.accessibilityservice.AccessibilityServiceInfo;
@@ -7,7 +7,6 @@ import android.util.Log;
 import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityNodeInfo;
 import java.util.Arrays;
-import java.util.Comparator;
 
 public class QQAccessibilityService extends AccessibilityService {
     private static final String ID_INPUT = "com.tencent.mobileqq:id/input";
@@ -211,12 +210,7 @@ public class QQAccessibilityService extends AccessibilityService {
         if (emotes.length == 0) {
             emotes = CatConfig.BUILTIN_EMOTICONS;
         }
-        Arrays.sort(emotes, new Comparator() {
-            @Override
-            public int compare(Object obj, Object obj2) {
-                return QQAccessibilityService.lambda$stripAll$0((String) obj, (String) obj2);
-            }
-        });
+        Arrays.sort(emotes, (a, b) -> compareByLengthDesc(a, b));
         for (String em : emotes) {
             if (em == null || em.isEmpty()) {
                 continue;
@@ -235,7 +229,8 @@ public class QQAccessibilityService extends AccessibilityService {
         return result.replaceAll("\\s*[\\p{S}\\p{So}\\p{Sm}\\p{Sk}\\p{P}]{3,}\\s*", " ").trim();
     }
 
-    static  int lambda$stripAll$0(String a, String b) {
+    /** 按字符串长度降序排列：先剥离最长的颜文字，避免短串误伤长串。 */
+    static int compareByLengthDesc(String a, String b) {
         return b.length() - a.length();
     }
 
